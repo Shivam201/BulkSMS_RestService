@@ -1,0 +1,12 @@
+Function Send_Msg(Customer_Name, Mobile_Number, Message_Content)
+    'MsgBox Customer_Name
+    Set MyRequest = CreateObject("WinHttp.WinHttpRequest.5.1")
+    MyRequest.Open "POST", "http://mysmsapp.in/api/push.json?apikey=************&sender=******&mobileno=" & Mobile_Number & "&text=" & Message_Content
+    ' Send Request.
+    MyRequest.send
+    'MsgBox "Done"
+    'And we get this response
+    If InStr(MyRequest.responseText, "error") Then
+       Send_Msg = "Error"
+    End If
+End Function
