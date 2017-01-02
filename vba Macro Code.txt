@@ -1,3 +1,8 @@
+'' Entry Class ''
+Sub Button1_Click()
+    Send_Msg(Customer_Name, Mobile_Number, Message_Content)
+End Sub
+
 Function Send_Msg(Customer_Name, Mobile_Number, Message_Content)
     'MsgBox Customer_Name
     Set MyRequest = CreateObject("WinHttp.WinHttpRequest.5.1")
